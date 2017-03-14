@@ -7,7 +7,25 @@ body {
   padding-bottom: 60px;
   padding-top: 20px;
   background-color: #35586C;
-  font-family: 'Indie Flower', cursive;
+  font-family: 'Orbitron', cursive;
+}
+
+button {
+  width: 60px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+
+p {
+  margin: 0;
+}
+
+.btnandahalf {
+  width: 92px;
+}
+
+.btntwice {
+  width: 124px;
 }
 
 .footer {
@@ -18,6 +36,24 @@ body {
   background-color: #f5f5f5;
 }
 
+.panel {
+  color: #ffffff;
+  background-color: #35586C;
+  padding: 10px;
+}
+
 .text-muted {
   margin: 20px 0;
+}
+
+.well {
+  width: 300px;
+}
+
+#result {
+  font-size: 24px;
+}
+
+#resultsmall {
+  font-size: 12px;
 }

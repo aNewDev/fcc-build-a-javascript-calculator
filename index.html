@@ -25,12 +25,55 @@
   <link rel="stylesheet" type="text/css" href="custom.css">
 
   <!-- link to google font -->
-  <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
 
 </head>
 
 <body id="body">
 
+  <div class="container" align="center">
+    <div class="well">
+
+      <div class="">
+        <p>ANEWDEV CALCULATOR v.01</p>
+      </div>
+
+      <div class="panel" align="right">
+        <p id="result"> 0 </p>
+        <p id="resultsmall"> ... </p>
+      </div>
+
+      <div>
+        <button type="button" class="btn btn-danger btnandahalf" onclick="clearAll()">AC</button>
+        <button type="button" class="btn btn-danger btnandahalf" onclick="clearCurrent(0)">CE</button>
+        <button type="button" class="btn btn-default" onclick="operation('​‌÷')">​‌÷</button>
+      </div>
+      <div class="">
+        <button type="button" class="btn btn-default" onclick="buildOperands(7)">7</button>
+        <button type="button" class="btn btn-default" onclick="buildOperands(8)">8</button>
+        <button type="button" class="btn btn-default" onclick="buildOperands(9)">9</button>
+        <button type="button" class="btn btn-default" onclick="operation('x')">x</button>
+      </div>
+      <div class="">
+        <button type="button" class="btn btn-default" onclick="buildOperands(4)">4</button>
+        <button type="button" class="btn btn-default" onclick="buildOperands(5)">5</button>
+        <button type="button" class="btn btn-default" onclick="buildOperands(6)">6</button>
+        <button type="button" class="btn btn-default" onclick="operation('-')">-</button>
+      </div>
+      <div class="">
+        <button type="button" class="btn btn-default" onclick="buildOperands(1)">1</button>
+        <button type="button" class="btn btn-default" onclick="buildOperands(2)">2</button>
+        <button type="button" class="btn btn-default" onclick="buildOperands(3)">3</button>
+        <button type="button" class="btn btn-default" onclick="operation('+')">+</button>
+      </div>
+      <div class="">
+        <button type="button" class="btn btn-default btntwice" onclick="buildOperands(0)">0</button>
+        <button type="button" class="btn btn-default" onclick="buildOperands(.)">.</button>
+        <button type="button" class="btn btn-default" onclick="equals()">=</button>
+      </div>
+
+    </div>
+  </div>
 
   <!-- footer -->
   <footer class="footer text-center">
