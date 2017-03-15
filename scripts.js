@@ -22,15 +22,12 @@ function clearAll() {
 }
 
 function buildOperands(num) {
-
   if (equalThenNumber === true) {
     operands = [];
     document.getElementById("result").innerHTML = 0;
     printResultSmall = '';
   }
-
   equalThenNumber = false
-
   if (operands.length >= 12) {
     clearAll();
     document.getElementById("result").innerHTML = 'MAX DIGITS';
@@ -39,7 +36,6 @@ function buildOperands(num) {
     printResultSmall += num;
     document.getElementById("resultsmall").innerHTML = printResultSmall;
   }
-
 }
 
 function createNumberFromArray() {
@@ -55,7 +51,6 @@ function completeOperation(num1) {
   } else {
     document.getElementById("result").innerHTML = num1;
   }
-
 }
 
 function doOperation(sign) {
@@ -102,8 +97,6 @@ function doOperation(sign) {
     completeOperation(num1);
   }
 
-  // console current status
-  console.log('doOp - opds are ', operands, ', opr is ', operator, ', num1 - ', num1, ', ctNum is ', currentNum, ', equal - ', equalThenOperator, ', pntSmall', printResultSmall)
 }
 
 function equals() {
@@ -146,8 +139,5 @@ function equals() {
 
   // to help correct display if next button pushed is number
   equalThenNumber = true;
-
-  // console current status
-  console.log('equals - opds are ', operands, ', opr is ', operator, ', num1 - ', num1, ', eqNum is ', equalsNum, ', equal - ', equalThenOperator, ', pntSmall', printResultSmall)
 
 }
