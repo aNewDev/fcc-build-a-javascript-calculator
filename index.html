@@ -45,30 +45,30 @@
 
       <div>
         <button type="button" class="btn btn-danger btnandahalf" onclick="clearAll()">AC</button>
-        <button type="button" class="btn btn-danger btnandahalf" onclick="clearCurrent(0)">CE</button>
-        <button type="button" class="btn btn-default" onclick="operation('​‌÷')">​‌÷</button>
+        <button type="button" class="btn btn-danger btnandahalf" onclick="clearCurrent(0, 'button')">CE</button>
+        <button type="button" class="btn btn-default" onclick="doOperation('÷')">​‌÷</button>
       </div>
       <div class="">
         <button type="button" class="btn btn-default" onclick="buildOperands(7)">7</button>
         <button type="button" class="btn btn-default" onclick="buildOperands(8)">8</button>
         <button type="button" class="btn btn-default" onclick="buildOperands(9)">9</button>
-        <button type="button" class="btn btn-default" onclick="operation('x')">x</button>
+        <button type="button" class="btn btn-default" onclick="doOperation('x')">x</button>
       </div>
       <div class="">
         <button type="button" class="btn btn-default" onclick="buildOperands(4)">4</button>
         <button type="button" class="btn btn-default" onclick="buildOperands(5)">5</button>
         <button type="button" class="btn btn-default" onclick="buildOperands(6)">6</button>
-        <button type="button" class="btn btn-default" onclick="operation('-')">-</button>
+        <button type="button" class="btn btn-default" onclick="doOperation('-')">-</button>
       </div>
       <div class="">
         <button type="button" class="btn btn-default" onclick="buildOperands(1)">1</button>
         <button type="button" class="btn btn-default" onclick="buildOperands(2)">2</button>
         <button type="button" class="btn btn-default" onclick="buildOperands(3)">3</button>
-        <button type="button" class="btn btn-default" onclick="operation('+')">+</button>
+        <button type="button" class="btn btn-default" onclick="doOperation('+')">+</button>
       </div>
       <div class="">
         <button type="button" class="btn btn-default btntwice" onclick="buildOperands(0)">0</button>
-        <button type="button" class="btn btn-default" onclick="buildOperands(.)">.</button>
+        <button type="button" class="btn btn-default" onclick="buildOperands('.')">.</button>
         <button type="button" class="btn btn-default" onclick="equals()">=</button>
       </div>
 
