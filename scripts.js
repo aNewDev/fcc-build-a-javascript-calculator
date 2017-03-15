@@ -63,7 +63,7 @@ function doOperation(sign) {
     operator = sign;
     operands = [];
   } else if (operator === 'x') {
-    num1 = Math.round((num1 + currentNum) * 100)/100;
+    num1 = Math.round((num1 * currentNum) * 100)/100;
     operator = sign;
     operands = [];
     document.getElementById("result").innerHTML = num1;
@@ -97,7 +97,7 @@ function equals() {
   var equalsNum = createNumberFromArray();
 
   if (operator === 'x') {
-    num1 = Math.round((num1 + equalsNum) * 100)/100;
+    num1 = Math.round((num1 * equalsNum) * 100)/100;
     operator = '=';
     operands = [];
     document.getElementById("result").innerHTML = num1;
