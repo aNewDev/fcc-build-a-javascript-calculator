@@ -22,19 +22,40 @@ function clearAll() {
 }
 
 function buildOperands(num) {
+
   if (equalThenNumber === true) {
     operands = [];
     document.getElementById("result").innerHTML = 0;
     printResultSmall = '';
   }
+
   equalThenNumber = false
-  operands.push(num);
-  printResultSmall += num;
-  document.getElementById("resultsmall").innerHTML = printResultSmall;
+
+  if (operands.length >= 12) {
+    clearAll();
+    document.getElementById("result").innerHTML = 'MAX DIGITS';
+  } else {
+    operands.push(num);
+    printResultSmall += num;
+    document.getElementById("resultsmall").innerHTML = printResultSmall;
+  }
+
 }
 
 function createNumberFromArray() {
   return Number(operands.join(''));
+}
+
+function completeOperation(num1) {
+  operands = [];
+  length = (num1 + '').replace('.', '').length;
+  if (length >= 12) {
+    clearAll();
+    document.getElementById("result").innerHTML = 'MAX DIGITS';
+  } else {
+    document.getElementById("result").innerHTML = num1;
+  }
+
 }
 
 function doOperation(sign) {
@@ -42,8 +63,9 @@ function doOperation(sign) {
   // Create a number out of the operands array
   var currentNum = createNumberFromArray();
 
-  //
+  // Check to see if the last operation was "equals"
   if (equalThenOperator === true) {
+    // Update the display with the "=" number, and add the operator
     operator = '';
     printResultSmall = currentNum + ' ' + sign + ' ';
     document.getElementById("resultsmall").innerHTML = printResultSmall;
@@ -65,23 +87,19 @@ function doOperation(sign) {
   } else if (operator === 'x') {
     num1 = Math.round((num1 * currentNum) * 100)/100;
     operator = sign;
-    operands = [];
-    document.getElementById("result").innerHTML = num1;
+    completeOperation(num1);
   } else if (operator === '+') {
     num1 += currentNum;
     operator = sign;
-    operands = [];
-    document.getElementById("result").innerHTML = num1;
+    completeOperation(num1);
   } else if (operator === '-') {
     num1 -= currentNum;
     operator = sign;
-    operands = [];
-    document.getElementById("result").innerHTML = num1;
+    completeOperation(num1);
   } else if (operator === '÷') {
     num1 /= currentNum;
     operator = sign;
-    operands = [];
-    document.getElementById("result").innerHTML = num1;
+    completeOperation(num1);
   }
 
   // console current status
@@ -99,30 +117,26 @@ function equals() {
   if (operator === 'x') {
     num1 = Math.round((num1 * equalsNum) * 100)/100;
     operator = '=';
-    operands = [];
-    document.getElementById("result").innerHTML = num1;
+    completeOperation(num1);
   } else if (operator === '+') {
     num1 += equalsNum;
     operator = '=';
-    operands = [];
-    document.getElementById("result").innerHTML = num1;
+    completeOperation(num1);
   } else if (operator === '-') {
     num1 -= equalsNum;
     operator = '=';
-    operands = [];
-    document.getElementById("result").innerHTML = num1;
+    completeOperation(num1);
   } else if (operator === '÷') {
     num1 /= equalsNum;
     operator = '=';
-    operands = [];
-    document.getElementById("result").innerHTML = num1;
+    completeOperation(num1);
   }
 
   printResultSmall += num1;
   document.getElementById("resultsmall").innerHTML = printResultSmall;
 
-  // set the operands to num2
-  operands.push(num1); // What happens if you hit a number next, and not a sign.  Guessing that you will create a bigger number.  Need to fix that bug.
+  // start the next number using the result if an operator is pressed next
+  operands.push(num1);
 
   // clear num1 after pushing it to operands
   num1 = 0;
